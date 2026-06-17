@@ -935,7 +935,7 @@
         setSafeText('detail-title', civ.detailTitle);
         const detailImg = document.getElementById('detail-image');
         if (detailImg) {
-            detailImg.src = civImages[id] || '';
+            detailImg.src = civ.archivalImage || civImages[id] || '';
             detailImg.style.display = detailImg.src ? 'block' : 'none';
         }
         setSafeHTML('detail-sections', `
