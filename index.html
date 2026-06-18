@@ -393,9 +393,9 @@
             </h3>
             <div id="detail-content" class="flex-1 overflow-y-auto no-scrollbar flex flex-col justify-between">
                 <div>
-                    <!-- 이미지 박스: w-fit과 max-w-full을 통해 이미지를 잘 감싸도록 설정 -->
-                    <div class="relative w-fit max-w-full mx-auto flex justify-center items-center border border-animus-ai/40 bg-[#0b111e] overflow-hidden rounded-sm shadow-md">
-                        <img id="detail-image" src="" class="max-w-full h-auto block cursor-zoom-in transition-transform duration-300 hover:opacity-80" onclick="if(this.src && !this.src.endsWith('undefined')) openImageModal(this.src);" onerror="this.style.display='none'" onload="this.style.display='block'">
+                    <!-- 이미지 박스: 컨테이너 크기에 맞춰 100% 채우되 비율은 유지 -->
+                    <div class="relative w-full mx-auto flex justify-center items-center border border-animus-ai/40 bg-[#0b111e] overflow-hidden rounded-sm shadow-md">
+                        <img id="detail-image" src="" class="w-full h-auto object-contain block cursor-zoom-in transition-transform duration-300 hover:opacity-80" onclick="if(this.src && !this.src.endsWith('undefined')) openImageModal(this.src);" onerror="this.style.display='none'" onload="this.style.display='block'">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0b111e]/60 via-transparent to-transparent pointer-events-none"></div>
                         <div class="absolute bottom-4 left-4 border-l-2 border-animus-ai pl-2 z-10 pointer-events-none"><h2 id="detail-title" class="text-white font-bold text-xl font-kr gold-glow tracking-wide">데이터 단편</h2></div>
                     </div>
@@ -811,7 +811,7 @@
                 },
                 {
                     title: "십자군 전쟁의 결과",
-                    content: "크리스트교 세계와 이슬람 세계의 큰 충돌이었던 십자군 전쟁은 서유럽 사회에 많은 변화를 가져왔다. 전쟁을 이끈 교황의 권위는 떨어졌고, 전쟁에 참여하였던 제후와 기사의 세력도 약해졌다. 반면, 왕권은 상대적으로 강해졌다. 이는 서유럽의 여러 나라가 중앙 집권 국가로 성장하는 데 영향을 주었다.\n\n한편, 셀주크 튀르크는 십자군 전쟁의 충격으로 수도를 옮겼다. 국력이 약해진 셀주크 튀르크는 13세기 중반 몽골군의 침입으로 쇠퇴하였다. 십자군 전쟁은 200여 년 동안 여러 차례에 걸쳐 일어났다. 십자군은 제1차 원정 때 예루살렘을 점령하기도 하였으나 전쟁에 참여한 사람들의 이해관계에 따라 점차 본래의 목적을 잃었다. 결국 성지를 회복하지 못하고 전쟁은 끝이 났다."
+                    content: "크리스트교 세계와 이슬람 세계의 큰 충돌이었던 십자군 전쟁은 서유럽 사회에 많은 변화를 가져왔다. 전쟁을 이끈 교황의 권위는 떨어졌고, 전쟁에 참여하였던 제후와 기사의 세력도 약해졌다. 반면, 왕권은 상대적으로 강해졌다. 이는 서유럽의 여러 나라가 중앙 집권 국가로 성장하는 데 영향을 주었다.\n\n한편, 셀주크 튀르크는 십자군 전쟁의 충격으로 수도를 옮겼다. 국력이 약해진 셀주크 튀르크는 13세기 중반 몽골군의 침입으로 쇠퇴하였다. 십자군 전쟁은 200여 무렵 동안 여러 차례에 걸쳐 일어났다. 십자군은 제1차 원정 때 예루살렘을 점령하기도 하였으나 전쟁에 참여한 사람들의 이해관계에 따라 점차 본래의 목적을 잃었다. 결국 성지를 회복하지 못하고 전쟁은 끝이 났다."
                 },
                 {
                     title: "지중해 무역권의 성장과 문화 교류",
@@ -904,8 +904,8 @@
         
         if (images.length > 0) {
             gallery.innerHTML = images.map(src => `
-                <div class="relative w-fit max-w-full mx-auto border border-animus-ai/30 bg-[#0b111e]/90 overflow-hidden rounded-md flex-shrink-0">
-                    <img src="${src}" class="max-w-full h-auto block cursor-zoom-in transition-transform duration-300 hover:opacity-80" onclick="event.stopPropagation(); openImageModal(this.src);" onerror="this.style.display='none'">
+                <div class="relative w-full mx-auto border border-animus-ai/30 bg-[#0b111e]/90 overflow-hidden rounded-md flex-shrink-0">
+                    <img src="${src}" class="w-full h-auto object-contain block cursor-zoom-in transition-transform duration-300 hover:opacity-80" onclick="event.stopPropagation(); openImageModal(this.src);" onerror="this.style.display='none'">
                 </div>
             `).join('');
             
@@ -1013,8 +1013,8 @@
                         <span>${src.title}</span>
                     </h4>
                     ${src.customBlock ? src.customBlock : ''}
-                    ${src.image && !src.customBlock ? `<div class="relative w-fit max-w-full mx-auto flex justify-center items-center border border-animus-ai/20 bg-[#151e2e] overflow-hidden rounded-sm mb-5 shadow-inner">
-                        <img src="${src.image}" class="max-w-full h-auto block cursor-zoom-in transition-transform duration-300 hover:opacity-80" onclick="event.stopPropagation(); openImageModal(this.src);" onerror="this.style.display='none'">
+                    ${src.image && !src.customBlock ? `<div class="relative w-full mx-auto flex justify-center items-center border border-animus-ai/20 bg-[#151e2e] overflow-hidden rounded-sm mb-5 shadow-inner">
+                        <img src="${src.image}" class="w-full h-auto object-contain block cursor-zoom-in transition-transform duration-300 hover:opacity-80" onclick="event.stopPropagation(); openImageModal(this.src);" onerror="this.style.display='none'">
                     </div>` : ''}
                     ${src.content ? `<p class="text-[15px] text-animus-text-light leading-relaxed break-keep opacity-90">${src.content}</p>` : ''}
                 </div>
