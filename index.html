@@ -393,9 +393,9 @@
             </h3>
             <div id="detail-content" class="flex-1 overflow-y-auto no-scrollbar flex flex-col justify-between">
                 <div>
-                    <div class="relative w-full border border-animus-ai/40 bg-[#0b111e] overflow-hidden rounded-sm shadow-md">
-                        <img id="detail-image" src="" class="w-full h-auto object-contain transition-transform duration-700" onerror="this.style.display='none'" onload="this.style.display='block'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0b111e] via-[#0b111e]/40 to-transparent pointer-events-none"></div>
+                    <div class="relative w-full flex justify-center items-center border border-animus-ai/40 bg-[#0b111e] overflow-hidden rounded-sm shadow-md min-h-[200px] p-2">
+                        <img id="detail-image" src="" class="max-w-full max-h-[400px] w-auto h-auto object-contain transition-transform duration-700" onerror="this.style.display='none'" onload="this.style.display='block'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0b111e]/60 via-transparent to-transparent pointer-events-none"></div>
                         <div class="absolute bottom-4 left-4 border-l-2 border-animus-ai pl-2 z-10"><h2 id="detail-title" class="text-white font-bold text-xl font-kr gold-glow tracking-wide">데이터 단편</h2></div>
                     </div>
                     <div id="detail-sections" class="mt-5"></div>
@@ -989,9 +989,9 @@
                         <span>${src.title}</span>
                     </h4>
                     ${src.customBlock ? src.customBlock : ''}
-                    ${src.image && !src.customBlock ? `<div class="relative w-full border border-animus-ai/20 bg-[#151e2e] overflow-hidden rounded-sm mb-5 group shadow-inner">
-                        <img src="${src.image}" class="w-full h-auto object-contain transition-transform duration-700 opacity-90 group-hover:scale-105" onerror="this.style.display='none'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0b111e]/80 via-transparent to-transparent pointer-events-none"></div>
+                    ${src.image && !src.customBlock ? `<div class="relative w-full flex justify-center items-center border border-animus-ai/20 bg-[#151e2e] overflow-hidden rounded-sm mb-5 group shadow-inner p-3 min-h-[150px]">
+                        <img src="${src.image}" class="max-w-full max-h-[500px] w-auto h-auto object-contain transition-transform duration-700 opacity-90 group-hover:scale-105" onerror="this.style.display='none'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0b111e]/50 via-transparent to-transparent pointer-events-none"></div>
                     </div>` : ''}
                     ${src.content ? `<p class="text-[15px] text-animus-text-light leading-relaxed break-keep opacity-90">${src.content}</p>` : ''}
                 </div>
