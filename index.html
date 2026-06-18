@@ -258,7 +258,7 @@
     </style>
 </head>
 <body class="bg-animus-void text-animus-text-light font-kr overflow-hidden h-screen flex flex-col relative">
-<audio id="bgm-player" src="BGM3.mp3" loop></audio>
+<audio id="bgm-player" src="BGM2.mp3" loop></audio>
 
 <!-- 코드로 직접 그린 다이아몬드 & 곡선 애니머스 패턴 배경 (모든 탭 적용) -->
 <div class="fixed inset-0 z-0 pointer-events-none bg-[#0a0a12]">
@@ -393,8 +393,8 @@
             </h3>
             <div id="detail-content" class="flex-1 overflow-y-auto no-scrollbar flex flex-col justify-between">
                 <div>
-                    <div class="relative w-full flex justify-center items-center border border-animus-ai/40 bg-[#0b111e] overflow-hidden rounded-sm shadow-md min-h-[250px]">
-                        <img id="detail-image" src="" class="w-auto h-auto max-w-full max-h-[400px] object-contain transition-transform duration-700" onerror="this.style.display='none'" onload="this.style.display='block'">
+                    <div class="relative w-full border border-animus-ai/40 bg-[#0b111e] overflow-hidden rounded-sm shadow-md">
+                        <img id="detail-image" src="" class="w-full h-auto object-contain transition-transform duration-700" onerror="this.style.display='none'" onload="this.style.display='block'">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0b111e] via-[#0b111e]/40 to-transparent pointer-events-none"></div>
                         <div class="absolute bottom-4 left-4 border-l-2 border-animus-ai pl-2 z-10"><h2 id="detail-title" class="text-white font-bold text-xl font-kr gold-glow tracking-wide">데이터 단편</h2></div>
                     </div>
@@ -854,7 +854,7 @@
             textbookData: { sources: [] }
         }
     ];
-
+    
     const timelineEvents = [
         { year: '11세기', title: '카노사의 굴욕', desc: '성직자 서임권을 둘러싸고 교황이 황제를 굴복시키며 교황권이 강화되었다.', region: 'EUROPE' },
         { year: '1095년', title: '클레르몽 공의회', desc: '교황 우르바누스 2세가 십자군 전쟁을 제창하며 동서 교류의 서막이 올랐다.', region: 'CRUSADES' },
@@ -879,8 +879,8 @@
         
         if (images.length > 0) {
             gallery.innerHTML = images.map(src => `
-                <div class="relative w-full flex items-center justify-center border border-animus-ai/30 bg-[#0b111e]/90 overflow-hidden rounded-md group flex-1 min-h-[200px]">
-                    <img src="${src}" class="w-auto h-auto max-w-full max-h-[400px] object-contain transition-transform duration-700 opacity-90 group-hover:scale-105" onerror="this.style.display='none'">
+                <div class="relative w-full border border-animus-ai/30 bg-[#0b111e]/90 overflow-hidden rounded-md group">
+                    <img src="${src}" class="w-full h-auto object-contain transition-transform duration-700 opacity-90 group-hover:scale-105" onerror="this.style.display='none'">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#0b111e]/80 via-transparent to-transparent pointer-events-none"></div>
                 </div>
             `).join('');
@@ -989,8 +989,8 @@
                         <span>${src.title}</span>
                     </h4>
                     ${src.customBlock ? src.customBlock : ''}
-                    ${src.image && !src.customBlock ? `<div class="relative w-full flex justify-center border border-animus-ai/20 bg-[#151e2e] overflow-hidden rounded-sm mb-5 group shadow-inner">
-                        <img src="${src.image}" class="max-w-full max-h-[300px] w-auto h-auto object-contain transition-transform duration-700 opacity-90 group-hover:scale-105" onerror="this.style.display='none'">
+                    ${src.image && !src.customBlock ? `<div class="relative w-full border border-animus-ai/20 bg-[#151e2e] overflow-hidden rounded-sm mb-5 group shadow-inner">
+                        <img src="${src.image}" class="w-full h-auto object-contain transition-transform duration-700 opacity-90 group-hover:scale-105" onerror="this.style.display='none'">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0b111e]/80 via-transparent to-transparent pointer-events-none"></div>
                     </div>` : ''}
                     ${src.content ? `<p class="text-[15px] text-animus-text-light leading-relaxed break-keep opacity-90">${src.content}</p>` : ''}
